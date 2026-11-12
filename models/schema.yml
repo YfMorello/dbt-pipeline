@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: fct_offshore_operations
+    description: "Core fact model aggregating vessel specifications, weather logs, and offshore installation events."
+    columns:
+      - name: event_id
+        description: "Primary key for offshore installation event."
+        data_tests:
+          - unique
+          - not_null
+      - name: vessel_id
+        description: "Foreign key to the vessels table."
+        data_tests:
+          - not_null

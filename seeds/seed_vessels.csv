@@ -1,0 +1,4 @@
+vessel_id,vessel_name,imo_number,crane_capacity_tonnes,status
+101,Wind Orca,9661364,1200,Active
+102,Wind Osprey,9661376,1200,Active
+103,Wind Scylla,9680794,1500,Maintenance
