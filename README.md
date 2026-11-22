@@ -14,6 +14,8 @@ Generated via `generate_seeds.py` into `seeds/`[cite: 7]:
    pip install dbt-duckdb
 
 Generate seed CSVs (if needed) and load them into DuckDB:
+
+```bash
 python generate_seeds.py
 dbt seed
 
