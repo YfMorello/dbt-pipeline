@@ -12,3 +12,13 @@ Generated via `generate_seeds.py` into `seeds/`[cite: 7]:
 1. Install dependencies:
    ```bash
    pip install dbt-duckdb
+
+Generate seed CSVs (if needed) and load them into DuckDB:
+python generate_seeds.py
+dbt seed
+
+Verify profile, run transformations, and execute tests:
+dbt debug
+dbt run
+dbt test
+
