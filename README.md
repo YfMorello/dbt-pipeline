@@ -1,32 +1,21 @@
-# Offshore Wind Fleet Analytics (`offshore_wind_fleet`)
+# Offshore Wind Fleet Analytics
 
-A local dbt + DuckDB project modeling offshore wind installation events, vessels, and weather logs.
+End-to-end dbt + DuckDB analytics pipeline simulating offshore wind installation vessels, weather logs, and turbine installation operations.
 
-## Seeds & Data
-Generated via `generate_seeds.py` into `seeds/`:
-- `seed_vessels.csv`: Vessel metadata, crane capacity, and operational status
-- `seed_weather_logs.csv`: Daily wave height and wind speed logs by offshore site
-- `seed_installation_events.csv`: Component installation durations and project assignments
+## Tech Stack
+- **Transformation & Testing**: dbt (`dbt-duckdb`)
+- **Analytical Database**: DuckDB (`offshore_wind.duckdb`)
+- **Synthetic Data**: Python (`simulate_vessels.py` -> `seeds/*.csv`)
 
-## Running the Project
+## Project Structure
+- `seeds/`: Raw CSV seed data (`seed_vessels`, `seed_weather_logs`, `seed_installation_events`)
+- `models/staging/`: Staging models (`stg_vessels`, `stg_weather_logs`, etc.)
+- `models/marts/`: Analytical fact model (`fct_offshore_operations`)
+- `models/overview.md`: Custom dbt Docs landing page content
 
-1. Install dependencies:
-
-```bash
-pip install dbt-duckdb
-```
-
-2. Generate seed data and verify the connection:
-
-```bash
-python generate_seeds.py
-dbt debug
-```
-
-3. Load seeds, build models, and run tests:
-
+## How to Run Locally
 ```bash
 dbt seed
 dbt run
 dbt test
-```
+dbt docs generate && dbt docs serve
