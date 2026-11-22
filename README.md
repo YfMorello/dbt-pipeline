@@ -13,4 +13,11 @@ Generated via `generate_seeds.py` into `seeds/`:
    ```bash
    pip install dbt-duckdb
 
-   
+1.Generate seed data and verify the connection:
+python generate_seeds.py
+dbt debug
+
+2.Load seeds, build models, and run tests:
+dbt seed
+dbt run
+dbt test
