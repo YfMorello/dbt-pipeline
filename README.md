@@ -21,9 +21,4 @@ dbt test
 dbt docs generate && dbt docs serve
 
 
-```mermaid
-flowchart LR
-    A[seed_installation_events] --> D[fct_offshore_operations]
-    B[stg_weather_logs] --> D
-    C[stg_vessels] --> D
-```
+
