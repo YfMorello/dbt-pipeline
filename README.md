@@ -19,7 +19,9 @@ Generate seed data and verify the connection:
 python generate_seeds.py
 dbt debug
 
+
 2.Load seeds, build models, and run tests:
+
 ```bash
 dbt seed
 dbt run
