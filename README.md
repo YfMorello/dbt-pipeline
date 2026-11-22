@@ -21,4 +21,18 @@ dbt test
 dbt docs generate && dbt docs serve
 
 
+```mermaid
+flowchart LR
+    subgraph Seeds & Staging
+        seed_events[(seed_installation_events\nSeed)]
+        stg_weather[(stg_weather_logs\nView / Model)]
+        stg_vessels[(stg_vessels\nView / Model)]
+    end
 
+    subgraph Marts
+        fct_ops[(fct_offshore_operations\nTable / Fact)]
+    end
+
+    seed_events --> fct_ops
+    stg_weather --> fct_ops
+    stg_vessels --> fct_ops
