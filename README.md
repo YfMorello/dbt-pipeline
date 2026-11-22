@@ -19,7 +19,9 @@ Generate seed CSVs (if needed) and load them into DuckDB:
 python generate_seeds.py
 dbt seed
 
+
 Verify profile, run transformations, and execute tests:
+```bash
 dbt debug
 dbt run
 dbt test
