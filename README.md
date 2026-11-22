@@ -21,7 +21,7 @@ dbt test
 dbt docs generate && dbt docs serve
 
 
-```mermaid
+Lineage Graph
 flowchart LR
     subgraph Seeds & Staging
         seed_events[(seed_installation_events\nSeed)]
