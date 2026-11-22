@@ -19,20 +19,22 @@ dbt seed
 dbt run
 dbt test
 dbt docs generate && dbt docs serve
+```
 
-
-Lineage Graph
+## Lineage Graph
+```mermaid
 flowchart LR
-    subgraph Seeds & Staging
-        seed_events[(seed_installation_events\nSeed)]
-        stg_weather[(stg_weather_logs\nView / Model)]
-        stg_vessels[(stg_vessels\nView / Model)]
+    subgraph "Seeds & Staging"
+        seed_events[(seed_installation_events<br/>Seed)]
+        stg_weather[(stg_weather_logs<br/>View / Model)]
+        stg_vessels[(stg_vessels<br/>View / Model)]
     end
 
     subgraph Marts
-        fct_ops[(fct_offshore_operations\nTable / Fact)]
+        fct_ops[(fct_offshore_operations<br/>Table / Fact)]
     end
 
     seed_events --> fct_ops
     stg_weather --> fct_ops
     stg_vessels --> fct_ops
+```
